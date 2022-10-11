@@ -1,0 +1,70 @@
+Pull:
+  Skills:
+  - pull{v=6;to=true} @PIR{r=15}
+  - delay 10
+  - pull{v=5;to=true} @PIR{r=15}
+  - delay 10
+  - pull{v=4;to=true} @PIR{r=15}
+  - delay 10
+  - damage{amount=10;ignoreArmor=true} @PIR{r=5} 
+  - delay 5
+  - throw{velocity=20;velocityY=10} @PlayersInRadius{r=6}
+SummonMinions:
+  Skills:
+  - speak{m="&cIf you are so tough, defeat my Minions!";cooldown=20} @PlayersInRadius{r=30}
+  - summon{type=NetherPirateMinion;amount=4;radius=3} @PIR{r=20}
+  - summon{type=VEX;amount=3;radius=4} @PIR{r=20}
+  - summon{type=Wither_Skeleton;amount=2;radius=3} @PIR{r=20}
+BossSpawn:
+  Skills:
+  - lightning @Self
+  - delay 5
+  - lightning @Self
+  - delay 5
+  - lightning @Self
+  - delay 10
+  - sendtitle{title="&cThe Nether Captain has been summoned!";subtitle="";d=40} @PlayersInRadius{r=30}
+ProtectionShield:
+  Skills:
+  - effect:particlesphere{particle=flame;amount=200;radius=2.5} @self
+  - damage{amount=15;element=FIRE} @PIR{r=4.5} 
+  - throw{velocity=8;velocityY=2.5} @PIR{r=4.5}
+LungeAndDamage:
+  Skills:
+  - effect:particleline{particle=flame;amount=15;fromOrigin=true;syo=1.5;hs=0.1;vs=0.1;s=0.03;} @target
+  - damage{amount=5;ignoreArmor=true} @Target
+  - delay 5
+  - effect:particleline{particle=flame;amount=15;fromOrigin=true;syo=1.5;hs=0.03;vs=0.1;s=0.03;} @target
+  - damage{amount=5;ignoreArmor=true} @Target
+  - delay 5
+  - effect:particleline{particle=flame;amount=15;fromOrigin=true;syo=1.5;hs=0.1;vs=0.1;s=0.03;} @target
+  - damage{amount=5;ignoreArmor=true} @Target
+  - delay 10
+  - lunge{velocity=3;velocityY=0.2} @Target
+  - delay 15
+  - damage{amount=15;ignoreArmor=true} @Target
+DamageSound:
+  Skills:
+  - sound{s=entity.blaze.hurt;v=32;p=0.4} @Self ~onDamaged
+PreDeath:
+  Skills:
+  - speak{m="&cSo you think it was that easy to defeat me.. huh?";cooldown=20} @PlayersInRadius{r=30}
+  - delay 20
+  - speak{m="&cI am not nearly dead.";cooldown=20} @PlayersInRadius{r=30}
+  - delay 10
+  - lightning @Self
+  - delay 5
+  - lightning @Self
+  - delay 5
+  - lightning @Self
+  - effect:particlering{particle=sweep_attack;radius=1.5;points=10;amount=2;hS=0.1;vS=0.1;s=0.4} @Self
+  - delay 5
+  - effect:particlering{particle=sweep_attack;radius=1.5;points=10;amount=2;hS=0.1;vS=0.1;s=0.4} @Self
+  - delay 5
+  - disguise{d="Giant SetBurning"} @self
+Death: 
+  Skills:
+  - speak{m="&cHow..";cooldown=20} @PIR{r=20}
+  - sound{s=block.end_portal.spawn;v=32;p=0.02} @Self 
+
+  

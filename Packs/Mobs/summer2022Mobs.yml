@@ -1,0 +1,37 @@
+NetherCaptain:
+  Type: ZOMBIE
+  Display: '&c&lNether Captain'
+  Health: 2500
+  Damage: 20
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+    Silent: true
+  Modules:
+    ThreatTable: true
+  Skills:
+  - skill{s=LungeAndDamage} <50% ~onTimer:1500 @Target
+  - skill{s=ProtectionShield} ~onTimer:60
+  - speak{m="&cWho has dared to Summon me!?";cooldown=20} @PlayersInRadius{r=40}
+    ~onSpawn >0 1
+  - skill{s=BossSpawn} ~onSpawn
+  - particles{particle=flame;a=15;hs=0.4;s=0.03;y=0.09} @Self ~onTimer:10
+  - skill{s=Pull} ~onCombat <50% 0.06
+  - skill{s=SummonMinions} ~onTimer:2000
+  - effect:geyser{type=LAVA;height=5;speed=10} @Target ~onCombat <25% 0.03
+  - skill{s=DamageSound} @Self
+  - skill{s=PreDeath} @Self =25% 0 1
+  - skill{s=Death} @Self ~onDeath
+  BossBar:
+    Enabled: true
+    Title: '&cNether Captain'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+  Disguise: NetherCaptain setBurning true
+NetherPirateMinion:
+  Type: Skeleton
+  Display: '&cNether Pirate'
+  Health: 40
+  Damage: 20
+  Disguise: NetherPirate1

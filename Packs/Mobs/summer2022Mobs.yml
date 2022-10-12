@@ -9,6 +9,8 @@ NetherCaptain:
     Silent: true
   Modules:
     ThreatTable: true
+  Drops:
+  - NetherCaptainDrops
   Skills:
   - skill{s=LungeAndDamage} <50% ~onTimer:1500 @Target
   - skill{s=ProtectionShield} ~onTimer:60

@@ -1,0 +1,26 @@
+MoltenSword:
+  Id: DIAMOND_SWORD
+  Data: 0
+  Display: '&4&lMolten &c&lSword'
+  Lore:
+  - '&6A sword forged in the ashes of a volcano, hot to the touch.'
+  - '&6It feels like it`s melting in my hands!'
+  - ''
+  - '&4⚑&o Summer 2022'
+  - ''
+  - '&f&lRARITY'
+  - '&4✪✪✪✪✪'
+  Enchantments:
+  - DAMAGE_ALL:5
+  - FIRE_ASPECT:2
+  - DURABILITY:3
+  Attributes:
+    MainHand:
+      Damage: 9
+      Health: -2
+      MovementSpeed: 0.06
+      AttackSpeed: -0.6
+    OffHand:
+      MovementSpeed: 0.1
+      Health: -4
+

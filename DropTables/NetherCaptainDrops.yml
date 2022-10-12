@@ -1,0 +1,7 @@
+NetherCaptainDrops:
+  MaxItems: 1
+  BonusLuckItems: 2to4
+  Drops:
+  - MoltenSword 1 4%
+  - DIAMOND 2 50%
+  - GOLD_NUGGET 14-16 100%
